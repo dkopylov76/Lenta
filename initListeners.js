@@ -46,13 +46,13 @@ export const initAddCommentListener = (renderComments) => {
                 day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric', minute: 'numeric'
             }
 
-        // const newComment = {
-        //     name: sanitizeHtml(name.value),
-        //     date: currentDate.toLocaleDateString('ru-RU', options),
-        //     text: sanitizeHtml(text.value),
-        //     likes: 0,
-        //     isLiked: false
-        // };
+        const newComment = {
+            // name: sanitizeHtml(name.value),
+            date: currentDate.toLocaleDateString('ru-RU', options),
+            // text: sanitizeHtml(text.value),
+            likes: 0,
+            isLiked: false
+        };
 
         postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
 
