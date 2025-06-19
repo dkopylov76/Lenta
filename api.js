@@ -1,4 +1,4 @@
-const server = "https://wedev-api.sky.pro/api/v1/:personal-key/comments"
+const server = "https://wedev-api.sky.pro/api/v1/dkopylov"
 
 export const fetchComments = () => {
     return fetch(server + "/comments").then((response) => {
