@@ -41,19 +41,6 @@ export const initAddCommentListener = (renderComments) => {
             return;
         }
 
-        // let currentDate = new Date();
-        //     const options = {
-        //         day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric', minute: 'numeric'
-        //     }
-
-        // const newComment = {
-        //     name: sanitizeHtml(name.value),
-        //     date: currentDate.toLocaleDateString('ru-RU', options),
-        //     text: sanitizeHtml(text.value),
-        //     likes: 0,
-        //     isLiked: false
-        // };
-
         postComment(sanitizeHtml(text.value), sanitizeHtml(name.value)).then((data) => {
             updateComments(data);
             renderComments();
@@ -61,8 +48,4 @@ export const initAddCommentListener = (renderComments) => {
             text.value = "";    
         })
     });
-    let currentDate = new Date();
-            const options = {
-                day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric', minute: 'numeric'
-            }
 }
