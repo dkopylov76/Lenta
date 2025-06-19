@@ -1,3 +1,4 @@
+import { postComment } from "./api.js";
 import { comments } from "./comments.js";
 import { sanitizeHtml } from "./sanitizeHtml.js";
 
@@ -45,17 +46,19 @@ export const initAddCommentListener = (renderComments) => {
                 day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric', minute: 'numeric'
             }
 
-        const newComment = {
-            name: sanitizeHtml(name.value),
-            date: currentDate.toLocaleDateString('ru-RU', options),
-            text: sanitizeHtml(text.value),
-            likes: 0,
-            isLiked: false
-        };
+        // const newComment = {
+        //     name: sanitizeHtml(name.value),
+        //     date: currentDate.toLocaleDateString('ru-RU', options),
+        //     text: sanitizeHtml(text.value),
+        //     likes: 0,
+        //     isLiked: false
+        // };
 
-        comments.push(newComment);
-        
-        renderComments();
+        postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
+
+        // comments.push(newComment);
+      
+        // renderComments();
 
         name.value = "";
         text.value = "";

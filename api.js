@@ -10,7 +10,8 @@ export const fetchComments = () => {
         const appComments = responseData.comments.map(comment => {
             return {
                 name: comment.author.name,
-                date: new Date(comment.date),
+                date: currentDate.toLocaleDateString('ru-RU', options),
+                // date: new Date(comment.date),
                 text: comment.text,
                 likes: comment.likes,
                 isLiked: false,
@@ -18,5 +19,18 @@ export const fetchComments = () => {
         })
 
         return appComments;
+    })
+}
+
+export const postComment = (text, name) => {
+    return fetch(server + "/comments", {
+        method: "POST",
+        body: JSON.stringify({
+            text,
+            name,
+        }),
+    })
+    .then(() => {
+        return fetchComments();
     })
 }
