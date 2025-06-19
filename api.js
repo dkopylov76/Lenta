@@ -10,8 +10,8 @@ export const fetchComments = () => {
         const appComments = responseData.comments.map(comment => {
             return {
                 name: comment.author.name,
-                date: currentDate.toLocaleDateString('ru-RU', options),
-                // date: new Date(comment.date),
+                // date: currentDate.toLocaleDateString('ru-RU', options),
+                date: new Date(comment.date),
                 text: comment.text,
                 likes: comment.likes,
                 isLiked: false,
