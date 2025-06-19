@@ -1,5 +1,5 @@
 import { postComment } from "./api.js";
-import { comments } from "./comments.js";
+import { comments, updateComments } from "./comments.js";
 import { sanitizeHtml } from "./sanitizeHtml.js";
 
 export const initLikeListeners = (renderComments) => {
@@ -54,17 +54,15 @@ export const initAddCommentListener = (renderComments) => {
         //     isLiked: false
         // };
 
-        postComment(sanitizeHtml(text.value), sanitizeHtml(name.value)).then(() => {
+        postComment(sanitizeHtml(text.value), sanitizeHtml(name.value)).then((data) => {
+            updateComments(data);
             renderComments();
             name.value = "";
             text.value = "";    
         })
-
-        // comments.push(newComment);
-      
-        // renderComments();
-
-        // name.value = "";
-        // text.value = "";
     });
+    let currentDate = new Date();
+            const options = {
+                day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric', minute: 'numeric'
+            }
 }
