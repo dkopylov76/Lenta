@@ -54,13 +54,17 @@ export const initAddCommentListener = (renderComments) => {
             isLiked: false
         };
 
-        postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
+        postComment(sanitizeHtml(text.value), sanitizeHtml(name.value)).then(() => {
+            renderComments();
+            name.value = "";
+            text.value = "";    
+        })
 
         // comments.push(newComment);
       
         // renderComments();
 
-        name.value = "";
-        text.value = "";
+        // name.value = "";
+        // text.value = "";
     });
 }
