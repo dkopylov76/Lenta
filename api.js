@@ -4,7 +4,7 @@ const server = "https://wedev-api.sky.pro/api/v1/dkopylov"
 
 export const fetchComments = () => {
     return fetch(server + "/comments").then((response) => {
-        // console.log(response);
+        console.log(response);
         return response.json();
     })
     .then((responseData) => {
@@ -17,7 +17,7 @@ export const fetchComments = () => {
                 isLiked: false,
             }
         })
-
+        console.log(appComments);
         return appComments;
     })
 }
