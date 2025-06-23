@@ -1,10 +1,9 @@
-import { comments } from "./comments.js"
-
 const server = "https://wedev-api.sky.pro/api/v1/dkopylov"
 
 export const fetchComments = () => {
     return fetch(server + "/comments").then((response) => {
-        return response.json()
+        // return response.json();
+        console.log(response);
     })
     .then((responseData) => {
         const appComments = responseData.comments.map(comment => {

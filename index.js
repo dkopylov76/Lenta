@@ -5,6 +5,7 @@ import { updateComments } from "./comments.js";
 
 fetchComments().then((data) => {
     updateComments(data);
+    console.log('Данные обновлены');
     renderComments();
 });
 
