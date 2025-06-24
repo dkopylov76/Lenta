@@ -6,18 +6,18 @@ export const fetchComments = () => {
     return fetch(server + "/comments").then((response) => {
         return response.json();
     })
-    .then(() => {
-        // const appComments = responseData.comments.map(comment => {
-        //     return {
-        //         name: comment.author.name,
-        //         date: comment.date,
-        //         text: comment.text,
-        //         likes: comment.likes,
-        //         isLiked: false,
-        //     }
-        // })
-        return appComments;
-    })
+    // .then(() => {
+    //     // const appComments = responseData.comments.map(comment => {
+    //     //     return {
+    //     //         name: comment.author.name,
+    //     //         date: comment.date,
+    //     //         text: comment.text,
+    //     //         likes: comment.likes,
+    //     //         isLiked: false,
+    //     //     }
+    //     // })
+    //     return appComments;
+    // })
 }
 
 export const postComment = (text, name) => {
