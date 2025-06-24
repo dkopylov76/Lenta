@@ -1,4 +1,4 @@
-import { appComments } from "./utils.js";
+import { responseData } from "./utils.js";
 
 const server = "https://wedev-api.sky.pro/api/v1/dkopylov"
 
@@ -16,7 +16,7 @@ export const fetchComments = () => {
     //     //         isLiked: false,
     //     //     }
     //     // })
-        return appComments;
+        return responseData();
     })
 }
 
