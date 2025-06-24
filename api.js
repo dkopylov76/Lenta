@@ -16,8 +16,8 @@ export const fetchComments = () => {
     //     //         isLiked: false,
     //     //     }
     //     // })
-        console.log(responseData);
-        // return responseData();
+        // console.log(responseData);
+        return responseData();
     })
 }
 

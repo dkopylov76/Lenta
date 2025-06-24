@@ -10,7 +10,8 @@ export const responseData = () => {
             isLiked: false,
         }
     })
-    return appComments;
+    console.log(appComments);
+    // return appComments;
 }
     // console.log(appComments);
 
