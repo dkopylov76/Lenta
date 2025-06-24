@@ -9,4 +9,5 @@ export const appComments = comments.map(comment => {
             isLiked: false,
         }
     })
+    console.log(appComments);
 // return appComments;
