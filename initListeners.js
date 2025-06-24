@@ -41,11 +41,15 @@ export const initAddCommentListener = (renderComments) => {
             return;
         }
 
-        postComment(sanitizeHtml(text.value), sanitizeHtml(name.value)).then((data) => {
+    postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
+        .then(() => {
+            return fetchComments();
+        })
+        .then((data) => {
             updateComments(data);
             renderComments();
             name.value = "";
-            text.value = "";    
+            text.value = "";
         })
     });
 }
