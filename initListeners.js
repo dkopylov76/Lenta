@@ -40,16 +40,16 @@ export const initAddCommentListener = (renderComments) => {
             console.error("заполните форму");
             return;
         }
-
-    postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
-        .then(() => {
-            return fetchComments();
-        })
-        .then((data) => {
-            updateComments(data);
-            renderComments();
-            name.value = "";
-            text.value = "";
-        })
-    });
+        
+        postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
+            .then(() => {
+                return fetchComments();
+            })
+            .then((data) => {
+                updateComments(data);
+                renderComments();
+                name.value = "";
+                text.value = "";
+            })
+        });
 }
