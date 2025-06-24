@@ -6,7 +6,7 @@ export const fetchComments = () => {
     return fetch(server + "/comments").then((response) => {
         return response.json();
     })
-    .then(() => {
+    .then((responseData) => {
     //     // const appComments = responseData.comments.map(comment => {
     //     //     return {
     //     //         name: comment.author.name,
