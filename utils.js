@@ -11,7 +11,7 @@ export const modifyComments = (data) => {
             isLiked: false,
         }
     })
-    return appComments(data);
+    return appComments;
 }
     // console.log(appComments);
     // return appComments;

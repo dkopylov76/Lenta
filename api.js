@@ -1,4 +1,4 @@
-import { appComments, modifyComments } from "./utils.js";
+import { modifyComments } from "./utils.js";
 
 const server = "https://wedev-api.sky.pro/api/v1/dkopylov"
 
