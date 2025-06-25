@@ -1,7 +1,7 @@
 import { comments } from "./comments.js";
+import { fetchComments } from "./api.js";
 
-export const responseData = () => {
-    const appComments = comments.map(comment => {
+export const appComments = data.comments.map(comment => {
         return {
             name: comment.author.name,
             date: comment.date,
@@ -12,7 +12,7 @@ export const responseData = () => {
     })
     console.log(appComments);
     // return appComments;
-}
+
     // console.log(appComments);
 
 
