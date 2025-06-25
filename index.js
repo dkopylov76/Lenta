@@ -6,7 +6,7 @@ import { updateComments } from "./comments.js";
 fetchComments().then((data) => {
     updateComments(data);
     // console.log(data);
-    renderComments();
+    renderComments(data);
 });
 
 initAddCommentListener(renderComments);
