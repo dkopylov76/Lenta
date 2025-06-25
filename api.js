@@ -34,8 +34,9 @@ export const postComment = (text, name) => {
         body: JSON.stringify({
             text,
             name,
-        }).then(() => {
-            return fetchComments();
         })
+        // .then(() => {
+        //     return fetchComments();
+        // })
     })
 }
