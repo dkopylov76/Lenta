@@ -10,21 +10,9 @@ export const fetchComments = () => {
         return response.json();
     })
      .then(data => {
-        // console.log(data);
-        // const appComments = data.comments.map(comment => {
-        //     return {
-        //         name: comment.author.name,
-        //         date: comment.date,
-        //         text: comment.text,
-        //         likes: comment.likes,
-        //         isLiked: false,
-        // }
-        // })
-        // console.log(responseData);
-    return modifyComments(data);
+        return modifyComments(data);
     })
 }
-
 
 export const postComment = (text, name) => {
     return fetch(server + "/comments", {
@@ -33,8 +21,5 @@ export const postComment = (text, name) => {
             text,
             name,
         })
-        // .then(() => {
-        //     return fetchComments();
-        // })
     })
 }
