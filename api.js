@@ -23,7 +23,7 @@ export const fetchComments = () => {
         // console.log(responseData);
     return appComments(data);
     })
-
+}
 
 
 export const postComment = (text, name) => {
