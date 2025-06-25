@@ -13,19 +13,20 @@ export const fetchComments = () => {
     //     return response.json();
     // })
     .then(data => {
-        const appComments = data.comments.map(comment => {
-            return {
-                name: comment.author.name,
-                date: comment.date,
-                text: comment.text,
-                likes: comment.likes,
-                isLiked: false,
-            }
+        console.log(data);
+        // const appComments = data.comments.map(comment => {
+        //     return {
+        //         name: comment.author.name,
+        //         date: comment.date,
+        //         text: comment.text,
+        //         likes: comment.likes,
+        //         isLiked: false,
+        // }
         })
         // console.log(responseData);
-        return appComments;
-    })
-}
+        // return appComments;
+    }
+
 
 export const postComment = (text, name) => {
     return fetch(server + "/comments", {
