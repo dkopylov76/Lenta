@@ -1,4 +1,4 @@
-// import { responseData } from "./utils.js";
+import { appComments } from "./utils.js";
 
 const server = "https://wedev-api.sky.pro/api/v1/dkopylov"
 
@@ -9,21 +9,21 @@ export const fetchComments = () => {
         }
         return response.json();
     })
-    .then(data => {
+     .then(data => {
         // console.log(data);
-        const appComments = data.comments.map(comment => {
-            return {
-                name: comment.author.name,
-                date: comment.date,
-                text: comment.text,
-                likes: comment.likes,
-                isLiked: false,
-        }
-        })
+        // const appComments = data.comments.map(comment => {
+        //     return {
+        //         name: comment.author.name,
+        //         date: comment.date,
+        //         text: comment.text,
+        //         likes: comment.likes,
+        //         isLiked: false,
+        // }
+        // })
         // console.log(responseData);
-        return appComments;
+    return appComments(data);
     })
-}
+
 
 
 export const postComment = (text, name) => {

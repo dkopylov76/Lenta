@@ -1,7 +1,8 @@
 import { comments } from "./comments.js";
 import { fetchComments } from "./api.js";
 
-export const appComments = comments.map(comment => {
+export const fetchComments = (data) => {
+    const appComments = data.comments.map(comment => {
         return {
             name: comment.author.name,
             date: comment.date,
@@ -10,7 +11,9 @@ export const appComments = comments.map(comment => {
             isLiked: false,
         }
     })
-    console.log(appComments);
+    return appComments(data);
+}
+    // console.log(appComments);
     // return appComments;
 
     // console.log(appComments);
