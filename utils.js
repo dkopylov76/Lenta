@@ -1,7 +1,7 @@
 import { comments } from "./comments.js";
 import { fetchComments } from "./api.js";
 
-export const fetchComments = (data) => {
+export const modifyComments = (data) => {
     const appComments = data.comments.map(comment => {
         return {
             name: comment.author.name,
