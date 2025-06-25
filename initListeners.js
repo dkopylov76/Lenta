@@ -42,9 +42,9 @@ export const initAddCommentListener = (renderComments) => {
         }
         
         postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
-            .then(() => {
-                return fetchComments();
-            })
+            // .then(() => {
+            //     return fetchComments();
+            // })
             .then((data) => {
                 updateComments(data);
                 renderComments();
