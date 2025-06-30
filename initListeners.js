@@ -1,4 +1,5 @@
-import { comments } from "./comments.js";
+import { fetchComments, postComment } from "./api.js";
+import { comments, updateComments } from "./comments.js";
 import { sanitizeHtml } from "./sanitizeHtml.js";
 
 export const initLikeListeners = (renderComments) => {
@@ -39,25 +40,16 @@ export const initAddCommentListener = (renderComments) => {
             console.error("заполните форму");
             return;
         }
-
-        let currentDate = new Date();
-            const options = {
-                day: 'numeric', month: 'numeric', year: '2-digit', hour: 'numeric', minute: 'numeric'
-            }
-
-        const newComment = {
-            name: sanitizeHtml(name.value),
-            date: currentDate.toLocaleDateString('ru-RU', options),
-            text: sanitizeHtml(text.value),
-            likes: 0,
-            isLiked: false
-        };
-
-        comments.push(newComment);
         
-        renderComments();
-
-        name.value = "";
-        text.value = "";
-    });
+        postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
+            .then(() => {
+                return fetchComments();
+            })
+            .then((data) => {
+                updateComments(data);
+                renderComments();
+                name.value = "";
+                text.value = "";
+            })
+        });
 }
