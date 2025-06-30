@@ -40,12 +40,17 @@ export const initAddCommentListener = (renderComments) => {
             console.error("заполните форму");
             return;
         }
+
+        document.querySelector(".form-loading").style.display = "block"
+        document.querySelector(".add-form").style.display = "none"
         
         postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
             .then(() => {
                 return fetchComments();
             })
             .then((data) => {
+                document.querySelector(".form-loading").style.display = "none"
+                document.querySelector(".add-form").style.display = "flex"
                 updateComments(data);
                 renderComments();
                 name.value = "";
