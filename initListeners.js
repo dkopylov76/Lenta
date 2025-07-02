@@ -48,6 +48,18 @@ export const initAddCommentListener = (renderComments) => {
             .then(() => {
                 return fetchComments();
             })
+            .then((response) => {
+                if (response.status === 201) {
+                    return response.json()
+                } else {
+                    if (response.status === 500) {
+                        throw new Error("Ошибка сервера")
+                    }
+                    if (response.status === 400) {
+                        throw new Error("Неверный запрос")
+                    }
+                }
+            })
             .then((data) => {
                 document.querySelector(".form-loading").style.display = "none"
                 document.querySelector(".add-form").style.display = "flex"
