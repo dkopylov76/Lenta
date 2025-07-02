@@ -2,6 +2,9 @@ import { comments } from "./comments.js";
 import { initLikeListeners, initReplyListeners } from "./initListeners.js";
 
 export const renderComments = () => {
+      
+      document.querySelector(".comments-loading").style.display = "none"
+      
       const list = document.querySelector(".comments");
 
       list.innerHTML = comments.map((comment, index) => {
