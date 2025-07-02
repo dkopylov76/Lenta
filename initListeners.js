@@ -40,7 +40,8 @@ export const initAddCommentListener = (renderComments) => {
             console.error("заполните форму");
             return;
         }
-
+        
+        document.querySelector(".comments-loading").style.display = "none"
         document.querySelector(".form-loading").style.display = "block"
         document.querySelector(".add-form").style.display = "none"
         

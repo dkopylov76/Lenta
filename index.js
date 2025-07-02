@@ -3,7 +3,7 @@ import { initAddCommentListener } from "./initListeners.js";
 import { renderComments } from "./renderComments.js";
 import { updateComments } from "./comments.js";
 
-document.querySelector(".comments").innerHTML = "Подождите, комментарии загружаются..."
+// document.querySelector(".comments").innerHTML = "Подождите, комментарии загружаются..."
 
 fetchComments().then((data) => {
     updateComments(data);
