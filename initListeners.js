@@ -45,9 +45,6 @@ export const initAddCommentListener = (renderComments) => {
         document.querySelector(".add-form").style.display = "none"
         
         postComment(sanitizeHtml(text.value), sanitizeHtml(name.value))
-            .then(() => {
-                return fetchComments();
-            })
             .then((response) => {
                 if (response.status === 500) {
                     throw new Error("Ошибка сервера")
@@ -58,6 +55,9 @@ export const initAddCommentListener = (renderComments) => {
                 if (response.status === 201) {
                     return response.json()
                 }
+            })
+            .then(() => {
+                return fetchComments();
             })
             .then((data) => {
                 document.querySelector(".form-loading").style.display = "none"
