@@ -49,15 +49,14 @@ export const initAddCommentListener = (renderComments) => {
                 return fetchComments();
             })
             .then((response) => {
+                if (response.status === 500) {
+                    throw new Error("Ошибка сервера")
+                }
+                if (response.status === 400) {
+                    throw new Error("Неверный запрос")
+                }
                 if (response.status === 201) {
                     return response.json()
-                } else {
-                    if (response.status === 500) {
-                        throw new Error("Ошибка сервера")
-                    }
-                    if (response.status === 400) {
-                        throw new Error("Неверный запрос")
-                    }
                 }
             })
             .then((data) => {
@@ -74,11 +73,9 @@ export const initAddCommentListener = (renderComments) => {
                 if (error.message === "Failed to fetch") {
                     alert("Отсутствует интернет. Попробуйте позже...")
                 }
-
                 if (error.message === "Ошибка сервера") {
                     alert("Сервер недоступен.")
                 }
-
                 if (error.message === "Неверный запрос") {
                     alert("Имя и комментарий не должны быть короче 3-х символов.")
 
