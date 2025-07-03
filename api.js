@@ -1,6 +1,13 @@
 import { modifyComments } from "./utils.js";
 
-const server = "https://wedev-api.sky.pro/api/v1/dkopylov"
+const server = "https://wedev-api.sky.pro/api/v2/dkopylov"
+const authHost = "https://wedev-api.sky.pro/api/user"
+
+let token = ""
+
+export const setToken = (newToken) => {
+    token = newToken
+}
 
 export const fetchComments = () => {
     return fetch(server + "/comments")
