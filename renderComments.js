@@ -1,6 +1,6 @@
 import { comments } from "./comments.js";
 import { token, name } from "./api.js";
-import { initLikeListeners, initReplyListeners } from "./initListeners.js";
+import { initLikeListeners, initReplyListeners, initAddCommentListener } from "./initListeners.js";
 import { renderLogin } from "./renderLogin.js";
 
 export const renderComments = () => {
