@@ -5,9 +5,10 @@ export const renderComments = () => {
       
       document.querySelector(".comments-loading").style.display = "none"
       
-      const list = document.querySelector(".comments");
+      const container = document.querySelector(".container");
 
-      list.innerHTML = comments.map((comment, index) => {
+      
+      const commentsHtml = comments.map((comment, index) => {
         return `
           <li class="comment" data-index="${index}">
           <div class="comment-header">
@@ -28,6 +29,26 @@ export const renderComments = () => {
         </li>
         `;
       }).join("");
+
+      const addCommentsHtml = `
+
+        <div class="add-form">
+          <input type="text" class="add-form-name" placeholder="Введите ваше имя" id="name-input" />
+          <textarea type="textarea" class="add-form-text" placeholder="Введите ваш коментарий" rows="4" id="text-input"></textarea>
+        <div class="add-form-row">
+          <button class="add-form-button">Написать</button>
+        </div>
+        </div>
+        <div class="form-loading">
+          Комментарий добавляется...
+        </div>`
+
+      const baseHtml = `
+        <ul class="comments">${commentsHtml}</ul>
+        ${addCommentsHtml}
+      `
+
+      container.innerHTML = baseHtml
 
       initLikeListeners(renderComments);
 
