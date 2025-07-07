@@ -1,6 +1,5 @@
 import { fetchComments, postComment } from "./api.js";
 import { comments, updateComments } from "./comments.js";
-import { renderComments } from "./renderComments.js";
 import { sanitizeHtml } from "./sanitizeHtml.js";
 
 export const initLikeListeners = (renderComments) => {

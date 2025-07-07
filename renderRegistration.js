@@ -50,12 +50,27 @@ export const renderRegistration = () => {
     submitButtonEl.addEventListener("click", () => {
         registration(nameEl.value, loginEl.value, passwordEl.value)
         .then((response) => {
-            return response.json()
+            if (response.status === 400) {
+                throw new Error("Пользователь существует")
+            }
+            if (response.status === 201) {
+                return response.json()
+            }
         })
         .then((data) => {
             setToken(data.user.token)
             setName(data.user.name)
             fetchAndRenderComments()
+        })
+        .catch((error) => {
+                // document.querySelector(".form-loading").style.display = "none"
+                // document.querySelector(".add-form").style.display = "flex"
+                
+                if (error.message === "Пользователь существует") {
+                    alert("Пользователь с таким именем уже существует.")
+                    
+                    nameEl.classList.add('-error')
+                }
         })
     })
 }
