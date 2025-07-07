@@ -31,7 +31,7 @@ export const renderLogin = () => {
 
     const loginEl = document.querySelector("#login")
     const passwordEl = document.querySelector("#password")
-    const submitButtonEl = document.querySelector(".button-main")
+    const submitButtonEl = document.querySelector(".add-form-button-main")
 
     submitButtonEl.addEventListener("click", () => {
         login(loginEl.value, passwordEl.value)
