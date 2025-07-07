@@ -1,5 +1,5 @@
 import { comments } from "./comments.js";
-import { token } from "./api.js";
+import { token, name } from "./api.js";
 import { initLikeListeners, initReplyListeners } from "./initListeners.js";
 import { renderLogin } from "./renderLogin.js";
 
@@ -33,8 +33,21 @@ export const renderComments = () => {
 
       const addCommentsHtml = `
         <div class="add-form">
-          <input type="text" class="add-form-name" placeholder="Введите ваше имя" id="name-input" />
-          <textarea type="textarea" class="add-form-text" placeholder="Введите ваш коментарий" rows="4" id="text-input"></textarea>
+          <input
+            type="text"
+            class="add-form-name"
+            placeholder="Введите ваше имя"
+            readonly
+            value="${name}"
+            id="name-input">
+          </input>
+          <textarea
+            type="textarea"
+            class="add-form-text"
+            placeholder="Введите ваш коментарий"
+            rows="4"
+            id="text-input">
+          </textarea>
         <div class="add-form-row">
           <button class="add-form-button">Написать</button>
         </div>
