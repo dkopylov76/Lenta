@@ -3,7 +3,7 @@ import { modifyComments } from "./utils.js";
 const server = "https://wedev-api.sky.pro/api/v2/dkopylov"
 const authHost = "https://wedev-api.sky.pro/api/user"
 
-let token = ""
+export let token = ""
 
 export const setToken = (newToken) => {
     token = newToken

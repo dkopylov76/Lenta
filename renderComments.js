@@ -1,4 +1,5 @@
 import { comments } from "./comments.js";
+import { token } from "./api.js";
 import { initLikeListeners, initReplyListeners } from "./initListeners.js";
 import { renderLogin } from "./renderLogin.js";
 
@@ -47,17 +48,18 @@ export const renderComments = () => {
 
       const baseHtml = `
         <ul class="comments">${commentsHtml}</ul>
-        ${linkToLoginText}
+        ${token ? addCommentsHtml : linkToLoginText}
       `
 
       container.innerHTML = baseHtml
 
-      // initLikeListeners(renderComments);
-      // initReplyListeners();
-      // initAddCommentListener(renderComments);
-
-      document.querySelector(".link-login").addEventListener("click", () => {
-        renderLogin();
-      })
-
+      if (token) {
+        initLikeListeners(renderComments);
+        initReplyListeners();
+        initAddCommentListener(renderComments);
+      } else {
+        document.querySelector(".link-login").addEventListener("click", () => {
+          renderLogin();
+        })
+      }
     };
