@@ -32,7 +32,6 @@ export const renderComments = () => {
       }).join("");
 
       const addCommentsHtml = `
-
         <div class="add-form">
           <input type="text" class="add-form-name" placeholder="Введите ваше имя" id="name-input" />
           <textarea type="textarea" class="add-form-text" placeholder="Введите ваш коментарий" rows="4" id="text-input"></textarea>
@@ -58,7 +57,7 @@ export const renderComments = () => {
       // initAddCommentListener(renderComments);
 
       document.querySelector(".link-login").addEventListener("click", () => {
-        renderLogin()
+        renderLogin();
       })
 
     };

@@ -11,4 +11,6 @@ export const renderLogin = () => {
             <u class="add-form-button-link registry">Зарегистрироваться</u>
         </fieldset>
     </section>`
+
+    container.innerHTML = loginHtml
 }
