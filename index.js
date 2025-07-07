@@ -7,9 +7,13 @@ import { updateComments } from "./comments.js";
 // document.querySelector(".comments-loading").innerHTML = 
 //     'Немного подождите, комментарии загружаются...'
 
-fetchComments().then((data) => {
-    updateComments(data);
-    renderComments();
-});
+export const fetchAndRenderComments = () => {
+    fetchComments().then((data) => {
+        updateComments(data)
+        renderComments()
+    })
+}
+
+fetchAndRenderComments()
 
 // initAddCommentListener(renderComments);

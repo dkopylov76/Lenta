@@ -1,4 +1,5 @@
 import { login, setToken, setName, fetchComments } from "./api.js"
+import { fetchAndRenderComments } from "./index.js";
 
 export const renderLogin = () => {
     const container = document.querySelector(".container")
@@ -39,10 +40,9 @@ export const renderLogin = () => {
             return response.json()
         })
         .then((data) => {
-            console.log(data)
-            // setToken(data.user.token)
-            // setName(data.user.name)
-            // fetchComments()
+            setToken(data.user.token)
+            setName(data.user.name)
+            fetchAndRenderComments()
         })
     })
 }
