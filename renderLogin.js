@@ -1,4 +1,4 @@
-import { login } from "./api.js"
+import { login, setToken, setName, fetchComments } from "./api.js"
 
 export const renderLogin = () => {
     const container = document.querySelector(".container")
@@ -26,7 +26,9 @@ export const renderLogin = () => {
              return response.json()
         })
         .then((data) => {
-            console.log(data)
+            setToken(data.user.token)
+            setName(data.user.name)
+            fetchComments()
         })
     })
 }

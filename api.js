@@ -9,6 +9,12 @@ export const setToken = (newToken) => {
     token = newToken
 }
 
+export let name = ""
+
+export const setName = (newName) => {
+    name = newName
+}
+
 export const fetchComments = () => {
     return fetch(server + "/comments")
     .then(response => {
