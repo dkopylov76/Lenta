@@ -3,7 +3,7 @@ import { initLikeListeners, initReplyListeners } from "./initListeners.js";
 
 export const renderComments = () => {
       
-      document.querySelector(".comments-loading").style.display = "none"
+      // document.querySelector(".comments-loading").style.display = "none"
       
       const container = document.querySelector(".container");
 
@@ -43,9 +43,11 @@ export const renderComments = () => {
           Комментарий добавляется...
         </div>`
 
+      const linkToLoginText = `<p>Чтобы отправить комментарий, <span class="link-login">войдите...</span>`
+
       const baseHtml = `
         <ul class="comments">${commentsHtml}</ul>
-        ${addCommentsHtml}
+        ${linkToLoginText}
       `
 
       container.innerHTML = baseHtml
