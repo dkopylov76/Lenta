@@ -107,8 +107,9 @@ body {
   }
 
   .add-form-name {
-    width: 300px;
+    /* width: 300px; */
     padding: 11px 22px;
+    margin-bottom: 10px;
   }
 
   .add-form-text {
@@ -124,6 +125,27 @@ body {
 
   .add-form-button {
     margin-top: 24px;
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #bcec30;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+  }
+
+  .add-form-button-link {
+    text-align: center;
+  }
+
+  .add-form-registry {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap: 10px;
+  }
+
+  .add-form-button-main {
     font-size: 24px;
     padding: 10px 20px;
     background-color: #bcec30;
