@@ -1,5 +1,6 @@
 import { comments } from "./comments.js";
 import { initLikeListeners, initReplyListeners } from "./initListeners.js";
+import { renderLogin } from "./renderLogin.js";
 
 export const renderComments = () => {
       
@@ -52,8 +53,12 @@ export const renderComments = () => {
 
       container.innerHTML = baseHtml
 
-      initLikeListeners(renderComments);
+      // initLikeListeners(renderComments);
+      // initReplyListeners();
+      // initAddCommentListener(renderComments);
 
-      initReplyListeners();
+      document.querySelector(".link-login").addEventListener("click", () => {
+        renderLogin()
+      })
 
     };
