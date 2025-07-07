@@ -63,13 +63,10 @@ export const renderRegistration = () => {
             fetchAndRenderComments()
         })
         .catch((error) => {
-                // document.querySelector(".form-loading").style.display = "none"
-                // document.querySelector(".add-form").style.display = "flex"
-                
                 if (error.message === "Пользователь существует") {
                     alert("Пользователь с таким именем уже существует.")
                     
-                    nameEl.classList.add('-error')
+                    loginEl.classList.add('-error')
                 }
         })
     })
