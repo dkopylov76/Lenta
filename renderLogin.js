@@ -16,7 +16,7 @@ export const renderLogin = () => {
                 required
             />
             <input
-                type="text"
+                type="password"
                 class="add-form-name"
                 placeholder="Введите пароль"
                 id="password"

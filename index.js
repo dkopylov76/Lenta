@@ -7,13 +7,19 @@ import { updateComments } from "./comments.js";
 // document.querySelector(".comments-loading").innerHTML = 
 //     'Немного подождите, комментарии загружаются...'
 
-export const fetchAndRenderComments = () => {
+export const fetchAndRenderComments = (isFirstLoading) => {
+
+    if (isFirstLoading) {
+        document.querySelector(".container").innerHTML = 
+        `<p>Немного подождите, комментарии загружаются...</p>`
+    }
+
     fetchComments().then((data) => {
         updateComments(data)
         renderComments()
     })
 }
 
-fetchAndRenderComments()
+fetchAndRenderComments(true)
 
 // initAddCommentListener(renderComments);
