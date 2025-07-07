@@ -12,4 +12,4 @@ fetchComments().then((data) => {
     renderComments();
 });
 
-initAddCommentListener(renderComments);
+// initAddCommentListener(renderComments);
