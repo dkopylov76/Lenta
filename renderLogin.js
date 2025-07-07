@@ -1,3 +1,5 @@
+import { login } from "./api.js"
+
 export const renderLogin = () => {
     const container = document.querySelector(".container")
 
@@ -13,4 +15,18 @@ export const renderLogin = () => {
     </section>`
 
     container.innerHTML = loginHtml
+
+    const loginEl = document.querySelector("#login")
+    const passwordEl = document.querySelector("#password")
+    const submitButtonEl = document.querySelector(".button-main")
+
+    submitButtonEl.addEventListener("click", () => {
+        login(loginEl.value, passwordEl.value)
+        .then((response) => {
+             return response.json()
+        })
+        .then((data) => {
+            console.log(data)
+        })
+    })
 }
