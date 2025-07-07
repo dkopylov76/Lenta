@@ -1,6 +1,6 @@
 import { comments } from "./comments.js";
 import { token, name } from "./api.js";
-import { initLikeListeners, initReplyListeners, initAddCommentListener } from "./initListeners.js";
+import { initAddCommentListener, initLikeListeners, initReplyListeners } from "./initListeners.js";
 import { renderLogin } from "./renderLogin.js";
 
 export const renderComments = () => {
@@ -29,37 +29,36 @@ export const renderComments = () => {
           </div>
         </li>
         `;
-      }).join("");
+      }).join("")
 
       const addCommentsHtml = `
         <div class="add-form">
-          <input
-            type="text"
-            class="add-form-name"
-            placeholder="Введите ваше имя"
-            readonly
-            value="${name}"
-            id="name-input">
-          </input>
-          <textarea
-            type="textarea"
-            class="add-form-text"
-            placeholder="Введите ваш коментарий"
-            rows="4"
-            id="text-input">
-          </textarea>
-        <div class="add-form-row">
-          <button class="add-form-button">Написать</button>
-        </div>
+            <input
+              type="text"
+              class="add-form-name"
+              placeholder="Введите ваше имя"
+              readonly
+              value="${name}"
+              id="name-input"
+            />
+            <textarea
+              type="textarea"
+              class="add-form-text"
+              placeholder="Введите ваш коментарий"
+              rows="4"
+              id="text-input"
+            ></textarea>
+            <div class="add-form-row">
+              <button class="add-form-button">Написать</button>
+            </div>
         </div>
         <div class="form-loading">
           Комментарий добавляется...
         </div>`
 
-      const linkToLoginText = `<p>Чтобы отправить комментарий, <span class="link-login">войдите...</span>`
+      const linkToLoginText = `<p>Чтобы отправить комментарий, <span class="link-login">войдите...</span></p>`
 
-      const baseHtml = `
-        <ul class="comments">${commentsHtml}</ul>
+      const baseHtml = `<ul class="comments">${commentsHtml}</ul>
         ${token ? addCommentsHtml : linkToLoginText}
       `
 

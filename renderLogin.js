@@ -27,7 +27,7 @@ export const renderLogin = () => {
         </section>
     `
 
-    container.innerHTML = loginHtml
+    container.innerHTML = loginHtml;
 
     const loginEl = document.querySelector("#login")
     const passwordEl = document.querySelector("#password")
@@ -39,9 +39,10 @@ export const renderLogin = () => {
             return response.json()
         })
         .then((data) => {
-            setToken(data.user.token)
-            setName(data.user.name)
-            fetchComments()
+            console.log(data)
+            // setToken(data.user.token)
+            // setName(data.user.name)
+            // fetchComments()
         })
     })
 }
