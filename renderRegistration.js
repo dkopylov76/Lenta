@@ -63,11 +63,15 @@ export const renderRegistration = () => {
             fetchAndRenderComments()
         })
         .catch((error) => {
-                if (error.message === "Пользователь существует") {
-                    alert("Пользователь с таким именем уже существует.")
+            if (error.message === "Пользователь существует") {
+                alert("Пользователь с таким именем уже существует.")
                     
-                    loginEl.classList.add('-error')
-                }
+                loginEl.classList.add('-error')
+                    
+                setTimeout(() => {
+                    loginEl.classList.remove('-error')
+                }, 2000)
+            }
         })
     })
 }
