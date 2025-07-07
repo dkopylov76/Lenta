@@ -12,7 +12,8 @@ export const renderLogin = () => {
             <button class="add-form-button-main button-main" type="submit">Войти</button>
             <u class="add-form-button-link registry">Зарегистрироваться</u>
         </fieldset>
-    </section>`
+    </section>
+    `
 
     container.innerHTML = loginHtml
 

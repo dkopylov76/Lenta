@@ -5,10 +5,9 @@ import { renderLogin } from "./renderLogin.js";
 
 export const renderComments = () => {
       
-      document.querySelector(".comments-loading").style.display = "none"
+      // document.querySelector(".comments-loading").style.display = "none"
       
       const container = document.querySelector(".container");
-
       
       const commentsHtml = comments.map((comment, index) => {
         return `
